@@ -3,8 +3,8 @@
 $ff-main: 'Josefin Sans', sans-serif
 
 $fs-title: 4rem
-$fs-header: 2.8rem
-$fs-subheader: 1.2rem
+$fs-header: 3rem
+$fs-subheader: 20px
 $fs-regular: 1rem
 $fs-small: 12px
 
@@ -35,6 +35,7 @@ body
     font-family: $ff-main
     font-size: $fs-regular
     font-weight: $fw-regular
+    color: $black
     a
         text-decoration: none
         color: inherit  
@@ -42,14 +43,15 @@ body
     section,
     footer
         padding: 40px 130px
-
+    p
+            line-height: 26px
     header
         min-height: 80vh
         color: $white
         background: $pattern-img-header 
         background-size: cover
         background-color: $dark-purple-header
-        
+        color: $white
         .navigation,
         nav ul,
         .contacts
@@ -58,7 +60,6 @@ body
             gap: 50px
         .navigation
             justify-content: space-between
-            
             nav ul
                 list-style: none
             a:hover
@@ -94,9 +95,19 @@ body
             right: 130px
             display: flex     
                         
-
+    section
+        h2
+            font-size: $fs-header
+        p.caption
+            font-size: $fs-subheader
+            font-weight: 500
+            padding: 10px 0
     section#about
         display: flex
+        gap: 30px
+        .left-col,
+        .right-col
+            width: 50%
     section#services
         background: $light-grey-bg
         .services

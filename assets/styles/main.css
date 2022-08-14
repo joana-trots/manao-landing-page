@@ -9,6 +9,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  color: #333;
 }
 body a {
   text-decoration: none;
@@ -19,12 +20,16 @@ body section,
 body footer {
   padding: 40px 130px;
 }
+body p {
+  line-height: 26px;
+}
 body header {
   min-height: 80vh;
   color: #fff;
   background: url("../images/header_bg_overlay.png") center center no-repeat;
   background-size: cover;
   background-color: #040B2A;
+  color: #fff;
 }
 body header .navigation,
 body header nav ul,
@@ -79,8 +84,21 @@ body header .partners {
   right: 130px;
   display: flex;
 }
+body section h2 {
+  font-size: 3rem;
+}
+body section p.caption {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0;
+}
 body section#about {
   display: flex;
+  gap: 30px;
+}
+body section#about .left-col,
+body section#about .right-col {
+  width: 50%;
 }
 body section#services {
   background: #F6F4F9;
