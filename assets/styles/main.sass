@@ -1,0 +1,183 @@
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap')
+$ff-main: 'Josefin Sans', sans-serif
+
+$fs-title: 4rem
+$fs-header: 2.8rem
+$fs-subheader: 1.2rem
+$fs-regular: 1rem
+$fs-small: 12px
+
+$fw-thin: 300
+$fw-regular: 400
+$fw-bold: 600
+
+// Colors
+$white: #fff
+$black: #333
+$grey: #777
+$light-grey-text: #C4C4C4 
+$light-grey-bg:#F6F4F9
+$ash-purple: #7E779A
+$dark-purple-header: #040B2A
+$dark-purple-footer:#0B0B35 
+$gradient1: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%)
+$gradient2: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%)
+
+$pattern-img-header: url('../images/header_bg_overlay.png') center center no-repeat
+$pattern-img-footer: url('../images/footer_bg_overlay.png') center center no-repeat
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+body
+    font-family: $ff-main
+    font-size: $fs-regular
+    font-weight: $fw-regular
+    a
+        text-decoration: none
+        color: inherit  
+    header,
+    section,
+    footer
+        padding: 0 130px
+
+    header
+        min-height: 80vh
+        color: $white
+        background: $pattern-img-header 
+        background-size: cover
+        background-color: $dark-purple-header
+        
+        .navigation,
+        nav ul,
+        .contacts
+            display: flex
+            align-items: center
+            gap: 50px
+        .navigation
+            justify-content: space-between
+            padding: 40px 0
+            nav ul
+                list-style: none
+            a:hover
+                color: $ash-purple
+                svg
+                    fill: $ash-purple
+            .contacts 
+                a
+                    display: flex
+                    align-items: center
+                    gap: 4px
+                svg 
+                    fill: $white
+        .cover
+            max-width: 860px
+            min-width: 300px
+            margin: auto 0
+            p
+                color: $ash-purple
+                font-size: $fs-regular
+                line-height: 26px
+            h1
+                font-size: $fs-title
+                padding-bottom: 4rem
+            a
+                padding: 22px 45px
+                text-transform: uppercase
+                background: $gradient1
+                border-radius: 90px
+        .partners  
+            position: absolute         
+                        
+
+    section#about
+        display: flex
+    section#services
+        background: $light-grey-bg
+        .services
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            //grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+            //grid-auto-rows: minmax(160px, auto)
+            grid-auto-flow: row
+            gap: 20px
+            div
+                background-color: $white
+                display: flex
+              
+                   
+                    
+
+
+
+        form
+            display: flex
+            grid-area: form
+            position: relative
+            width: 100%
+            label
+                border-width: 0 !important
+                clip: rect(1px, 1px, 1px, 1px) !important
+                height: 1px !important
+                overflow: hidden !important
+                padding: 0 !important
+                position: absolute !important
+                white-space: nowrap !important
+                width: 1px !important
+            input
+                padding: 16px 20px
+
+                border-top-left-radius: 30px
+                border-bottom-left-radius: 30px
+                //color: $dark-red
+                width: 100%
+                position: relative
+                font-family: $ff-main
+                outline: none
+                font-size: $fs-regular
+                &::placeholder
+                    //color: $light-grey    
+            button
+                padding: 13px 35px 10px
+                background: $gradient1
+                background-position: center
+                background-size: cover 
+                border: 0
+                border-radius: 30px   
+                box-shadow: 0 0 10px 5px hsla(0, 36%, 70%, .4)
+                position: relative
+                z-index: 2
+                left: -60px
+                &:hover
+                    cursor: pointer
+                    background: $gradient2
+            .error-message
+                display: none 
+                position: absolute 
+                padding-top: 60px
+                padding-left: 21px
+                width: 100%
+                //color: $red 
+            &.is-validated 
+                input:invalid
+                    border: 1.5px solid $grey
+                .error-message
+                    display: flex
+                    flex-direction: row-reverse
+                    justify-content: space-between
+                    &::before
+                        content: ''
+                        width: 24px
+                        height: 24px
+                        background: url('../icons/icon-error.svg')
+                        margin-top: -46px
+                        margin-right: 180px
+    section
+        grid-area: cover
+        //background: $photo center center no-repeat
+        height: 100%
+        background-size: cover
+
+@import _responsive
