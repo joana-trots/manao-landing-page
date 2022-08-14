@@ -17,7 +17,7 @@ body a {
 body header,
 body section,
 body footer {
-  padding: 0 130px;
+  padding: 40px 130px;
 }
 body header {
   min-height: 80vh;
@@ -35,7 +35,6 @@ body header .contacts {
 }
 body header .navigation {
   justify-content: space-between;
-  padding: 40px 0;
 }
 body header .navigation nav ul {
   list-style: none;
@@ -57,7 +56,7 @@ body header .navigation .contacts svg {
 body header .cover {
   max-width: 860px;
   min-width: 300px;
-  margin: auto 0;
+  margin: 5vh 0;
 }
 body header .cover p {
   color: #7E779A;
@@ -76,6 +75,9 @@ body header .cover a {
 }
 body header .partners {
   position: absolute;
+  bottom: calc(20vh + 50px);
+  right: 130px;
+  display: flex;
 }
 body section#about {
   display: flex;
