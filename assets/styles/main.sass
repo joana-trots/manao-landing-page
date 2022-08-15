@@ -1,16 +1,19 @@
-// Typography
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap')
-$ff-main: 'Josefin Sans', sans-serif
+@font-face 
+    font-family: TTCommons
+    src: url('../fonts/TTCommons-Regular.ttf')
+@font-face 
+    font-family: Pragmatica
+    src: url('../fonts/TTCommons-Regular.ttf')
+
+    
+$ff-headers: 'TTCommons', sans-serif
+$ff-paragraph: 'Pragmatica', sans-serif
 
 $fs-title: 4rem
 $fs-header: 3rem
 $fs-subheader: 18px
 $fs-regular: 1rem
 $fs-small: 12px
-
-$fw-thin: 300
-$fw-regular: 400
-$fw-bold: 600
 
 // Colors
 $white: #fff
@@ -21,8 +24,7 @@ $light-grey-bg:#F6F4F9
 $ash-purple: #7E779A
 $dark-purple-header: #040B2A
 $dark-purple-footer:#0B0B35 
-$gradient1: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%)
-$gradient2: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%)
+$gradient: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%)
 
 $pattern-img-header: url('../images/header_bg_overlay.png') center center no-repeat
 $pattern-img-footer: url('../images/footer_bg_overlay.png') center center no-repeat
@@ -36,23 +38,50 @@ $icon-arrow-purple: url('../icons/icon_arrow_purple.svg') center center no-repea
     margin: 0
     padding: 0
 body
-    font-family: $ff-main
+    font-family: $ff-paragraph
     font-size: $fs-regular
-    font-weight: $fw-regular
+    font-weight: 400
     color: $black
     a
         text-decoration: none
         color: inherit  
-
+    h1,h2,h4 
+        font-family: $ff-headers
+        font-weight: 700
+    h1
+        font-size: $fs-title
+        padding-bottom: 4rem
+    h2
+        font-size: $fs-header
+        padding-bottom: 14px
+        text-align: center
+    h3
+        font-family: $ff-paragraph
+        font-size: $fs-subheader
+        color: $grey
+        text-align: center
+        font-weight: 400
+        padding-bottom: 40px
+    h4
+        font-size: 22px
+        padding-bottom: 16px
+        font-weight: 600
+    p, address
+        line-height: 26px
+        padding-bottom: 10px
+        font-style: inherit
+        &.caption
+            font-size: 20px
+            font-weight: 500
+    small
+        font-size: 15px
+        color: $light-grey-text
     section,
     footer
         padding: 90px 130px
-    p
-            line-height: 26px
     header
         min-height: 80vh
         padding: 40px 130px
-        color: $white
         background: $pattern-img-header 
         background-size: cover
         background-color: $dark-purple-header
@@ -66,6 +95,8 @@ body
         .navigation
             justify-content: space-between
             flex-wrap: wrap
+            font-family: $ff-headers
+            font-weight: 500
             nav ul
                 list-style: none
             a:hover
@@ -75,52 +106,39 @@ body
             .contacts 
                 a
                     display: flex
-                    align-items: center
-                    gap: 4px
+                    gap: 5px
                 svg 
                     fill: $white
         .cover
-            max-width: 860px
+            max-width: 800px
             min-width: 300px
             margin: 5vh 0
             p
                 color: $ash-purple
                 font-size: $fs-regular
                 line-height: 26px
-            h1
-                font-size: $fs-title
-                padding-bottom: 4rem
             a
                 padding: 22px 45px
                 text-transform: uppercase
-                background: $gradient1
+                background: $gradient
                 border-radius: 90px
+                font-family: $ff-headers
+                font-weight: 600
         .partners  
-            position: absolute 
-            bottom: calc(20vh + 50px)
-            right: 130px
-            display: flex     
+            display: flex   
+            justify-content: end
+            font-family: $ff-headers
+            gap: 20px
+            p
+                padding-bottom: 0 
                         
     section
-        h2
-            font-size: $fs-header
-            padding-bottom: 14px
-        h3
-            font-size: $fs-subheader
-            color: $grey
-            text-align: center
-            font-weight: 500
-            padding-bottom: 40px
-        p
-            padding-bottom: 10px
-            &.caption
-                font-size: 20px
-                font-weight: 500
-    
         &#about
             display: flex
             gap: 30px
             flex-wrap: wrap
+            h2
+                text-align: left
             .left-col,
             .right-col
                 width: calc(50% - 15px)
@@ -130,11 +148,8 @@ body
             .left-col img
                 width: calc(50% - 4px)
                 margin-top: 26px
-
         &#services
             background: $light-grey-bg
-            h2
-                text-align: center
             .services
                 display: grid
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
@@ -149,13 +164,8 @@ body
                     border-radius: 9px
                     p
                         text-align: left
-
         &#publications
             position: relative
-            h2
-                text-align: center
-            h4
-                padding-bottom: 16px
             .slider
                 .slider-item
                     background: $light-grey-bg
@@ -173,11 +183,17 @@ body
                         display: flex
                         justify-content: space-between
                         small
-                            color: $light-grey-text
                             display: flex
                             gap: 4px
+                            color: $ash-purple
                             &::before
                                 content: url('data:image/svg+xml,%3Csvg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect x="1" y="1" width="14" height="14" rx="2" stroke="%23C4C4C4" stroke-width="2"/%3E%3Crect x="4" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="4" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="4" y="10" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="10" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="10" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="10" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3C/svg%3E')
+                    hr
+                        width: calc(100% - 60px)
+                        margin-left: 30px
+                        border: none
+                        background-color: #EAE8EC
+                        height: 2px
             .slider-arrows
                 position: absolute
                 z-index: 1
@@ -201,73 +217,103 @@ body
                         background-color: $white
                 .next
                     transform: rotate(180deg)
-            
-                   
-                    
 
-
-
-        // form
-        //     display: flex
-        //     grid-area: form
-        //     position: relative
-        //     width: 100%
-        //     label
-        //         border-width: 0 !important
-        //         clip: rect(1px, 1px, 1px, 1px) !important
-        //         height: 1px !important
-        //         overflow: hidden !important
-        //         padding: 0 !important
-        //         position: absolute !important
-        //         white-space: nowrap !important
-        //         width: 1px !important
-        //     input
-        //         padding: 16px 20px
-
-        //         border-top-left-radius: 30px
-        //         border-bottom-left-radius: 30px
-        //         //color: $dark-red
-        //         width: 100%
-        //         position: relative
-        //         font-family: $ff-main
-        //         outline: none
-        //         font-size: $fs-regular
-        //         &::placeholder
-        //             //color: $light-grey    
-        //     button
-        //         padding: 13px 35px 10px
-        //         background: $gradient1
-        //         background-position: center
-        //         background-size: cover 
-        //         border: 0
-        //         border-radius: 30px   
-        //         box-shadow: 0 0 10px 5px hsla(0, 36%, 70%, .4)
-        //         position: relative
-        //         z-index: 2
-        //         left: -60px
-        //         &:hover
-        //             cursor: pointer
-        //             background: $gradient2
-        //     .error-message
-        //         display: none 
-        //         position: absolute 
-        //         padding-top: 60px
-        //         padding-left: 21px
-        //         width: 100%
-        //         //color: $red 
-        //     &.is-validated 
-        //         input:invalid
-        //             border: 1.5px solid $grey
-        //         .error-message
-        //             display: flex
-        //             flex-direction: row-reverse
-        //             justify-content: space-between
-        //             &::before
-        //                 content: ''
-        //                 width: 24px
-        //                 height: 24px
-        //                 background: url('../icons/icon-error.svg')
-        //                 margin-top: -46px
-        //                 margin-right: 180px
+    footer
+        color: $white
+        background: $pattern-img-footer 
+        background-size: cover
+        background-color: $dark-purple-footer
+        .footer_main       
+            display: flex
+            flex-wrap: wrap
+            h2, h3
+                text-align: left
+            h3, small
+                color: $ash-purple
+            .left-col
+                width: 40%
+                .contacts
+                    display: flex
+                    gap: 30px
+                    font-family: $ff-headers
+                    font-weight: 700
+                    .social
+                        writing-mode: vertical-lr
+                        transform: rotate(180deg)
+                        display: flex
+                        justify-content: space-around
+                    a:hover
+                        color: $ash-purple
+            .right-col
+                width: 60%
+                min-width: 300px
+                form
+                    display: flex
+                    flex-direction: column
+                    gap: 30px
+                    position: relative
+                    div:not(.chekboxes)
+                        label:not([for="url"])
+                            border-width: 0 !important
+                            clip: rect(1px, 1px, 1px, 1px) !important
+                            height: 1px !important
+                            overflow: hidden !important
+                            padding: 0 !important
+                            position: absolute !important
+                            white-space: nowrap !important
+                            width: 1px !important
+                        input, textarea
+                            padding: 16px 20px
+                            outline: none
+                            background-color: transparent
+                            border: 2px solid #473E69
+                            width: 100%
+                            color: $white
+                            &::placeholder
+                                color: $grey 
+                    input[type='submit']
+                        border: 2px solid
+                        text-transform: uppercase
+                        width: 240px
+                        padding: 22px 45px
+                        color: $white
+                        background: transparent
+                        border-radius: 90px
+                        cursor: pointer
+                        &:hover
+                            background: $gradient
+                    input[type="checkbox"]
+                        appearance: none
+                        border: 2px solid #473E69
+                        background-color: transparent
+                        border-radius: 4px
+                        height: 14px
+                        width: 14px
+                        color: $white
+                        &:checked
+                            appearance: auto
+                    .agreement
+                        font-size: 12px
+                        color: $ash-purple
+                        a
+                            text-decoration: underline      
+                    .error-message
+                        display: none 
+                        position: absolute 
+                        color: red 
+                        top: -42px
+                    &.is-validated 
+                        input:invalid
+                            border: 1.5px solid red
+                        .error-message
+                            display: block
+                           
+        .footer_secondary
+            display: flex 
+            justify-content: space-between  
+            font-family: $ff-headers
+            font-weight: 500      
+            color: $ash-purple  
+            padding-top: 50px
 
 @import _responsive

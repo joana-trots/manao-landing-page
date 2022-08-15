@@ -38,7 +38,7 @@
         <h1>Техническая поддержка сайтов и&nbsp;корпоративных порталов</h1>
         <a href="#footer" class="cta-btn">Отправить сайт на оценку</a>
       </div>
-      <div class="partners">Партнеры:&nbsp;<img src="assets/icons/icon-partners.svg" /></div>
+      <div class="partners"><p>Партнеры:&nbsp;</p><img src="assets/icons/icon-partners.svg" /></div>
     </header>
     <main>
       <section id="about">
@@ -193,8 +193,77 @@
       </section>
     </main>
     <footer id="footer">
-      
+      <div class="footer_main">
+        <div class="left-col">
+          <div>
+            <h2>Отправить сайт на&nbsp;оценку</h2>
+            <h3>Рассчитать смету? Проконсультировать по&nbsp;проекту? Подписать NDA? Легко!</h3>  
+          </div>
+          <div class="contacts">
+            <div class="social">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">Vkontakte</a>
+            </div>
+            <div>
+              <small>Наш адрес</small>
+              <address>Минск, Бирюзова 4/5, каб. 4005</address>
+              <small>Время работы</small>
+              <address>пн-пт, с 9:00 до 18:00</address>
+              <small>Звоните</small>
+              <p><a href="tel:+74951281324" class="tel">+7 (495) 128-13-24</a></p>
+              <small>Пишите</small>
+              <p><a href="mailto:info@manao-team.com" class="mail">info@manao-team.com</a>
+              <br><a href="#">@ManaoTeamBot (Telegram, Viber)</a>
+              </a></p>
+            </div>
+          </div>
+        </div>
+        <div class="right-col">
+          <form method="post" action="#" id="form" novalidate>
+            <p class="error-message"><small>Пожалуйста, введите корректные данные!</small></p>
+            <div>
+              <label for="name">Ваше имя<br></label>
+              <input type="text" name="name" id="name" placeholder="Ваше имя" required>
+            </div>
+            <div>
+              <label for="url">Адрес сайта<br></label>
+              <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>  
+            </div>
+            <div>
+              <label for="text">Описание задач<br></label>
+              <textarea name="text" placeholder="Описание задач" maxlength="280"></textarea>
+            </div>
+            <div class="chekboxes">
+              <input type="checkbox" id="cb1" name="cb1" value="Консультация">
+              <label for="cb1">&nbsp;Мне нужна консультация</label><br>
+              <input type="checkbox" id="cb2" name="cb2" value="Тариф">
+              <label for="cb2">&nbsp;Подберите для нас тариф</label><br>
+              <input type="checkbox" id="cb3" name="cb3" value="Детальная оценка">
+              <label for="cb3">&nbsp;Готовы предоставить доступ для более детальной оценки</label>
+            </div>
+            <p class="agreement">Нажимая на кнопку, вы соглашаетесь на обработку <a>персональных данных</a></p>
+            <input type="submit" id="submit" value="Отправить заявку">  
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div class="footer_secondary">
+        <div>
+          <img src="assets/icons/icon_visa.svg" alt="visa"/>
+          <img src="assets/icons/icon_visa_secure.svg" alt="visa secure"/>
+          <img src="assets/icons/icon_paypal.svg" alt="paypal"/>
+          <img src="assets/icons/icon_mastercard.svg" alt="mastercard"/>
+          <img src="assets/icons/icon_mastercard_idcheck.svg" alt="mastercard id-check"/>
+          <img src="assets/icons/icon_belcart.svg" alt="belcart"/>
+          <img src="assets/icons/icon_belcart_internet.svg" alt="belcart internet pass"/>
+          <img src="assets/icons/icon_alfabank.svg" alt="alfabank"/>
+        </div>
+        <p><a>Политика обработки персональных данных</a></p>
+        <p>Manao.Support — «Битриксоиды» до мозга костей :)</p>
+      </div>
     </footer>
+    
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -210,5 +279,25 @@
       });
     </script>
     <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
+    <script>
+      const formElement = document.getElementById('form');
+      formElement.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const url = formData.get('url');
+        const text = formData.get('text');   
+        
+        var cb = [];
+        var list_checkbox = document.querySelectorAll('input[type="checkbox"]');
+        for (var i = 0, k = list_checkbox.length; i < k; i++)
+        if (list_checkbox[i].checked) cb.push (document.querySelector('label[for=' + list_checkbox[i].id + ']').innerText);
+        if ($('.error-message').css.display = 'none') {
+          console.log(name, url, text);
+          if (cb.length) console.log(cb.join (', '));
+        }
+      });
+      
+    </script>
   </body>
 </html>

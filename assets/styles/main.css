@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+@font-face {
+  font-family: TTCommons;
+  src: url("../fonts/TTCommons-Regular.ttf");
+}
+@font-face {
+  font-family: Pragmatica;
+  src: url("../fonts/TTCommons-Regular.ttf");
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +13,7 @@
 }
 
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Pragmatica", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #333;
@@ -15,17 +22,52 @@ body a {
   text-decoration: none;
   color: inherit;
 }
+body h1, body h2, body h4 {
+  font-family: "TTCommons", sans-serif;
+  font-weight: 700;
+}
+body h1 {
+  font-size: 4rem;
+  padding-bottom: 4rem;
+}
+body h2 {
+  font-size: 3rem;
+  padding-bottom: 14px;
+  text-align: center;
+}
+body h3 {
+  font-family: "Pragmatica", sans-serif;
+  font-size: 18px;
+  color: #777;
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+body h4 {
+  font-size: 22px;
+  padding-bottom: 16px;
+  font-weight: 600;
+}
+body p, body address {
+  line-height: 26px;
+  padding-bottom: 10px;
+  font-style: inherit;
+}
+body p.caption, body address.caption {
+  font-size: 20px;
+  font-weight: 500;
+}
+body small {
+  font-size: 15px;
+  color: #C4C4C4;
+}
 body section,
 body footer {
   padding: 90px 130px;
 }
-body p {
-  line-height: 26px;
-}
 body header {
   min-height: 80vh;
   padding: 40px 130px;
-  color: #fff;
   background: url("../images/header_bg_overlay.png") center center no-repeat;
   background-size: cover;
   background-color: #040B2A;
@@ -41,6 +83,8 @@ body header .contacts {
 body header .navigation {
   justify-content: space-between;
   flex-wrap: wrap;
+  font-family: "TTCommons", sans-serif;
+  font-weight: 500;
 }
 body header .navigation nav ul {
   list-style: none;
@@ -53,14 +97,13 @@ body header .navigation a:hover svg {
 }
 body header .navigation .contacts a {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 body header .navigation .contacts svg {
   fill: #fff;
 }
 body header .cover {
-  max-width: 860px;
+  max-width: 800px;
   min-width: 300px;
   margin: 5vh 0;
 }
@@ -69,44 +112,30 @@ body header .cover p {
   font-size: 1rem;
   line-height: 26px;
 }
-body header .cover h1 {
-  font-size: 4rem;
-  padding-bottom: 4rem;
-}
 body header .cover a {
   padding: 22px 45px;
   text-transform: uppercase;
   background: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%);
   border-radius: 90px;
+  font-family: "TTCommons", sans-serif;
+  font-weight: 600;
 }
 body header .partners {
-  position: absolute;
-  bottom: calc(20vh + 50px);
-  right: 130px;
   display: flex;
+  justify-content: end;
+  font-family: "TTCommons", sans-serif;
+  gap: 20px;
 }
-body section h2 {
-  font-size: 3rem;
-  padding-bottom: 14px;
-}
-body section h3 {
-  font-size: 18px;
-  color: #777;
-  text-align: center;
-  font-weight: 500;
-  padding-bottom: 40px;
-}
-body section p {
-  padding-bottom: 10px;
-}
-body section p.caption {
-  font-size: 20px;
-  font-weight: 500;
+body header .partners p {
+  padding-bottom: 0;
 }
 body section#about {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+}
+body section#about h2 {
+  text-align: left;
 }
 body section#about .left-col,
 body section#about .right-col {
@@ -122,9 +151,6 @@ body section#about .left-col img {
 }
 body section#services {
   background: #F6F4F9;
-}
-body section#services h2 {
-  text-align: center;
 }
 body section#services .services {
   display: grid;
@@ -145,12 +171,6 @@ body section#services .services div p {
 }
 body section#publications {
   position: relative;
-}
-body section#publications h2 {
-  text-align: center;
-}
-body section#publications h4 {
-  padding-bottom: 16px;
 }
 body section#publications .slider .slider-item {
   background: #F6F4F9;
@@ -173,12 +193,19 @@ body section#publications .slider .slider-item .slider-item_footer {
   justify-content: space-between;
 }
 body section#publications .slider .slider-item .slider-item_footer small {
-  color: #C4C4C4;
   display: flex;
   gap: 4px;
+  color: #7E779A;
 }
 body section#publications .slider .slider-item .slider-item_footer small::before {
   content: url('data:image/svg+xml,%3Csvg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect x="1" y="1" width="14" height="14" rx="2" stroke="%23C4C4C4" stroke-width="2"/%3E%3Crect x="4" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="4" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="4" y="10" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="7" y="10" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="10" y="4" width="2" height="2" fill="%23C4C4C4"/%3E%3Crect x="10" y="7" width="2" height="2" fill="%23C4C4C4"/%3E%3C/svg%3E');
+}
+body section#publications .slider .slider-item hr {
+  width: calc(100% - 60px);
+  margin-left: 30px;
+  border: none;
+  background-color: #EAE8EC;
+  height: 2px;
 }
 body section#publications .slider-arrows {
   position: absolute;
@@ -207,6 +234,123 @@ body section#publications .slider-arrows .next:hover {
 }
 body section#publications .slider-arrows .next {
   transform: rotate(180deg);
+}
+body footer {
+  color: #fff;
+  background: url("../images/footer_bg_overlay.png") center center no-repeat;
+  background-size: cover;
+  background-color: #0B0B35;
+}
+body footer .footer_main {
+  display: flex;
+  flex-wrap: wrap;
+}
+body footer .footer_main h2, body footer .footer_main h3 {
+  text-align: left;
+}
+body footer .footer_main h3, body footer .footer_main small {
+  color: #7E779A;
+}
+body footer .footer_main .left-col {
+  width: 40%;
+}
+body footer .footer_main .left-col .contacts {
+  display: flex;
+  gap: 30px;
+  font-family: "TTCommons", sans-serif;
+  font-weight: 700;
+}
+body footer .footer_main .left-col .contacts .social {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: space-around;
+}
+body footer .footer_main .left-col .contacts a:hover {
+  color: #7E779A;
+}
+body footer .footer_main .right-col {
+  width: 60%;
+  min-width: 300px;
+}
+body footer .footer_main .right-col form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+}
+body footer .footer_main .right-col form div:not(.chekboxes) label:not([for=url]) {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+body footer .footer_main .right-col form div:not(.chekboxes) input, body footer .footer_main .right-col form div:not(.chekboxes) textarea {
+  padding: 16px 20px;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #473E69;
+  width: 100%;
+  color: #fff;
+}
+body footer .footer_main .right-col form div:not(.chekboxes) input::placeholder, body footer .footer_main .right-col form div:not(.chekboxes) textarea::placeholder {
+  color: #777;
+}
+body footer .footer_main .right-col form input[type=submit] {
+  border: 2px solid;
+  text-transform: uppercase;
+  width: 240px;
+  padding: 22px 45px;
+  color: #fff;
+  background: transparent;
+  border-radius: 90px;
+  cursor: pointer;
+}
+body footer .footer_main .right-col form input[type=submit]:hover {
+  background: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%);
+}
+body footer .footer_main .right-col form input[type=checkbox] {
+  appearance: none;
+  border: 2px solid #473E69;
+  background-color: transparent;
+  border-radius: 4px;
+  height: 14px;
+  width: 14px;
+  color: #fff;
+}
+body footer .footer_main .right-col form input[type=checkbox]:checked {
+  appearance: auto;
+}
+body footer .footer_main .right-col form .agreement {
+  font-size: 12px;
+  color: #7E779A;
+}
+body footer .footer_main .right-col form .agreement a {
+  text-decoration: underline;
+}
+body footer .footer_main .right-col form .error-message {
+  display: none;
+  position: absolute;
+  color: red;
+  top: -42px;
+}
+body footer .footer_main .right-col form.is-validated input:invalid {
+  border: 1.5px solid red;
+}
+body footer .footer_main .right-col form.is-validated .error-message {
+  display: block;
+}
+body footer .footer_secondary {
+  display: flex;
+  justify-content: space-between;
+  font-family: "TTCommons", sans-serif;
+  font-weight: 500;
+  color: #7E779A;
+  padding-top: 50px;
 }
 
 @media screen and (max-width: 820px) {
