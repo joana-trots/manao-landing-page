@@ -216,14 +216,16 @@
             <div>
               <small>Наш адрес</small>
               <address>Минск, Бирюзова 4/5, каб. 4005</address>
+
               <small>Время работы</small>
               <address>пн-пт, с 9:00 до 18:00</address>
+              
               <small>Звоните</small>
               <p><a href="tel:+74951281324" class="tel">+7 (495) 128-13-24</a></p>
+              
               <small>Пишите</small>
               <p><a href="mailto:info@manao-team.com" class="mail">info@manao-team.com</a>
-              <br><a href="#">@ManaoTeamBot (Telegram, Viber)</a>
-              </a></p>
+              <br><a href="#">@ManaoTeamBot (Telegram, Viber)</a></p>
             </div>
           </div>
         </div>
@@ -250,8 +252,10 @@
               <input type="checkbox" id="cb3" name="cb3" value="Детальная оценка">
               <label for="cb3">&nbsp;Готовы предоставить доступ для более детальной оценки</label>
             </div>
-            <p class="agreement">Нажимая на кнопку, вы соглашаетесь на обработку <a>персональных данных</a></p>
-            <input type="submit" id="submit" value="Отправить заявку">  
+            <p class="agreement">
+              Нажимая на кнопку, вы соглашаетесь на обработку <a>персональных данных</a>
+              <input type="submit" id="submit" value="Отправить заявку">
+            </p>
           </form>
         </div>
       </div>
@@ -305,28 +309,7 @@
       });
     </script>
     <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
-    <script>
-      const formElement = document.getElementById('form');
-      formElement.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const name = formData.get('name');
-        const url = formData.get('url');
-        const text = formData.get('text');   
-        
-        var cb = [];
-        var list_checkbox = document.querySelectorAll('input[type="checkbox"]');
-        for (var i = 0, k = list_checkbox.length; i < k; i++)
-        if (list_checkbox[i].checked) cb.push (document.querySelector('label[for=' + list_checkbox[i].id + ']').innerText);
-        if ($('.error-message').css.display = 'none') {
-          console.log(name, url, text);
-          if (cb.length) console.log(cb.join (', '));
-        }
-      });
-      $(".menu").click(function() {
-        $(".menu").toggleClass("active");
-        $(".navigation").toggleClass("active");
-      });
-    </script>
+    <script src="js/formdata.js"></script>
+    <script src="js/navmobile.js"></script>
   </body>
 </html>

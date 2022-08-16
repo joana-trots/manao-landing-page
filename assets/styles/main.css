@@ -6,6 +6,11 @@
   font-family: Pragmatica;
   src: url("../fonts/TTCommons-Regular.ttf");
 }
+footer .footer_secondary, footer .footer_main .left-col .contacts .social, section#publications .slider-arrows, section#publications .slider .slider-item .slider-item_footer, header .navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -88,7 +93,7 @@ header .contacts {
   gap: 50px;
 }
 header .navigation {
-  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   font-family: "TTCommons", sans-serif;
   font-weight: 500;
@@ -253,8 +258,6 @@ section#publications .slider .slider-item p {
 }
 section#publications .slider .slider-item .slider-item_footer {
   padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
 }
 section#publications .slider .slider-item .slider-item_footer small {
   display: flex;
@@ -274,8 +277,6 @@ section#publications .slider .slider-item hr {
 section#publications .slider-arrows {
   position: absolute;
   z-index: 1;
-  display: flex;
-  justify-content: space-between;
   width: calc(100% - 240px);
   left: 120px;
   top: 52%;
@@ -328,11 +329,12 @@ footer .footer_main .left-col .contacts {
 footer .footer_main .left-col .contacts .social {
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  display: flex;
-  justify-content: space-around;
 }
 footer .footer_main .left-col .contacts a:hover {
   color: #7E779A;
+}
+footer .footer_main .left-col .contacts p:last-child {
+  padding-bottom: 0;
 }
 footer .footer_main .right-col {
   width: 60%;
@@ -361,15 +363,18 @@ footer .footer_main .right-col form div:not(.chekboxes) input, footer .footer_ma
   border: 2px solid #473E69;
   width: 100%;
   color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
 }
 footer .footer_main .right-col form div:not(.chekboxes) input::placeholder, footer .footer_main .right-col form div:not(.chekboxes) textarea::placeholder {
   color: #777;
 }
 footer .footer_main .right-col form input[type=submit] {
-  border: 2px solid;
+  position: relative;
+  border: 2px solid #fff;
   text-transform: uppercase;
-  width: 240px;
-  padding: 22px 45px;
+  width: 210px;
+  padding: 16px 0;
   color: #fff;
   background: transparent;
   border-radius: 90px;
@@ -378,17 +383,45 @@ footer .footer_main .right-col form input[type=submit] {
 footer .footer_main .right-col form input[type=submit]:hover {
   background: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%);
 }
-footer .footer_main .right-col form input[type=checkbox] {
-  appearance: none;
-  border: 2px solid #473E69;
-  background-color: transparent;
-  border-radius: 4px;
-  height: 14px;
-  width: 14px;
-  color: #fff;
+footer .footer_main .right-col form .chekboxes input[type=checkbox] {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
 }
-footer .footer_main .right-col form input[type=checkbox]:checked {
-  appearance: auto;
+footer .footer_main .right-col form .chekboxes label {
+  position: relative;
+  cursor: pointer;
+}
+footer .footer_main .right-col form .chekboxes label:before {
+  content: "";
+  appearance: none;
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  border: 2px solid #473E69;
+  border-radius: 4px;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 9px 5px 10px 0;
+}
+footer .footer_main .right-col form .chekboxes input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 footer .footer_main .right-col form .agreement {
   font-size: 12px;
@@ -396,6 +429,7 @@ footer .footer_main .right-col form .agreement {
 }
 footer .footer_main .right-col form .agreement a {
   text-decoration: underline;
+  margin-right: 20px;
 }
 footer .footer_main .right-col form .error-message {
   display: none;
@@ -414,8 +448,6 @@ footer hr {
   margin-top: 30px;
 }
 footer .footer_secondary {
-  display: flex;
-  justify-content: space-between;
   font-family: "TTCommons", sans-serif;
   font-weight: 500;
   color: #7E779A;

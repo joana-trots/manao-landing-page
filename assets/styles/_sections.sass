@@ -45,9 +45,8 @@ section
                     color: $grey
                     font-size: 15px
                 .slider-item_footer
+                    @extend %flex-space-bt
                     padding: 20px 30px
-                    display: flex
-                    justify-content: space-between
                     small
                         display: flex
                         gap: 4px
@@ -61,10 +60,9 @@ section
                     background-color: #EAE8EC
                     height: 2px
         .slider-arrows
+            @extend %flex-space-bt
             position: absolute
             z-index: 1
-            display: flex
-            justify-content: space-between
             width: calc(100% - 240px)
             left: 120px
             top: 52%
