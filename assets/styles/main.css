@@ -6,10 +6,16 @@
   font-family: Pragmatica;
   src: url("../fonts/TTCommons-Regular.ttf");
 }
-* {
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,7 +73,7 @@ body footer {
 }
 
 header {
-  min-height: 80vh;
+  min-height: 60vh;
   padding: 40px 130px;
   background: url("../images/header_bg_overlay.png") center center no-repeat;
   background-size: cover;
@@ -161,7 +167,7 @@ header .menu.active span:after {
 header .cover {
   max-width: 800px;
   min-width: 300px;
-  margin: 5vh 0;
+  margin: 15vh 0;
 }
 header .cover p {
   color: #7E779A;
@@ -474,10 +480,10 @@ header .contacts {
     background-color: #fff;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
     height: auto;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: 0.5s;
     padding: 40px;
   }
@@ -496,6 +502,9 @@ header .contacts {
   }
   header .menu {
     display: block;
+  }
+  header .cover {
+    margin: 5vh 0;
   }
   footer .footer_main {
     flex-wrap: wrap;

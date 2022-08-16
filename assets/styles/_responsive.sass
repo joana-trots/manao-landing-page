@@ -48,10 +48,10 @@
             background-color: $white
             position: absolute
             top: 0
-            right: 0
+            left: 0
             width: 100%
             height: auto
-            transform: translateX(100%)
+            transform: translateX(-100%)
             transition: 0.5s
             padding: 40px
             &.active
@@ -65,6 +65,8 @@
                     fill: $black
         .menu
             display: block
+        .cover
+            margin: 5vh 0
     footer
         .footer_main
             flex-wrap: wrap

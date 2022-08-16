@@ -1,9 +1,14 @@
 @import _variables
 @import _fonts
-*
+
+*, *:before, *:after 
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
     box-sizing: border-box
     margin: 0
     padding: 0
+html
+    scroll-behavior: smooth
 body
     font-family: $ff-paragraph
     font-size: $fs-regular
