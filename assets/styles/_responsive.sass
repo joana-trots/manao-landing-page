@@ -1,29 +1,107 @@
-@media screen and (max-width: 820px)
+@media screen and (max-width: 1127px)
+    $fs-title: 3.4rem
     body
-        display: flex
-        flex-direction: column 
-        main
-            padding: 30px 
-            .cover_mobile
-                display: block
+        h1
+            font-size: $fs-title
+            padding-bottom: 3.4rem
+        section,
+        footer
+            padding: 70px 90px
+    header
+        padding: 40px 90px
+        .partners
+            justify-content: start
+        .navigation
+            .contacts
+                display: none
+    section
+        &#publications
+            .slider-arrows
+                width: calc(100% - 140px)
+                left: 70px
+
+@media screen and (max-width: 890px)        
+    section
+        &#about
+            .left-col,
+            .right-col
+                width: 100%
+        &#services
+            .services
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))
+        
+@media screen and (max-width: 768px)  
+    body
+        overflow-x: hidden
+        section,
+        footer
+            padding: 40px 60px
+    header
+        padding: 30px 60px
+        padding-top: 70px
+        .navigation,
+        nav ul,
+        .contacts
+            flex-direction: column
+            color: $black
+        .navigation
+            background-color: $white
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: auto
+            transform: translateX(100%)
+            transition: 0.5s
+            padding: 40px
+            &.active
+                transform: translateX(0)
+                transition: 0.5s
+            .logo svg path
+                fill: #3F0F72
+            .contacts
+                display: flex
+                svg 
+                    fill: $black
+        .menu
+            display: block
+    footer
+        .footer_main
+            flex-wrap: wrap
+            .left-col,
+            .right-col
+                width: 100%
+            .right-col
                 margin-top: 30px
-                margin-left: -30px
-                width: 100vw
-            .text
-                text-align: center 
-                width: 100% 
-                h1
-                    font-size: 2.5rem
-                    margin-top: 40px 
-            form
-                width: calc(100% + 30px)
-                padding-bottom: 50px
-                button
-                    padding: 16px 31px 12px
-                    left: -30px
-                &.is-validated 
-                    .error-message
-                        &::before
-                            margin-right: 125px
-        section
-            display: none
+
+@media screen and (max-width: 540px)
+    $fs-title: 2.4rem
+    body
+        h1
+            font-size: $fs-title
+            padding-bottom: 2.8rem
+        h2
+            font-size: 2rem
+        section,
+        footer
+            padding: 40px 30px
+    header
+        min-height: auto
+        padding: 70px 30px 30px
+        .partners
+            flex-direction: column
+            img
+                margin: -10px 0 0 -7px
+                width: 80%
+        .cover
+            a
+                padding: 20px 30px
+    section
+        &#services
+            .services
+                width: 255px
+                margin: auto
+        &#publications
+            .slider-arrows
+                width: calc(100% - 20px)
+                left: 10px
