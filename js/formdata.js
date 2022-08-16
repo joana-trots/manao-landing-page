@@ -5,7 +5,6 @@ const formElement = document.getElementById('form');
         const name = formData.get('name');
         const url = formData.get('url');
         const text = formData.get('text');   
-
         var cb = [];
         var list_checkbox = document.querySelectorAll('input[type="checkbox"]');
         for (var i = 0, k = list_checkbox.length; i < k; i++)
