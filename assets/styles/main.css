@@ -158,14 +158,18 @@ header .menu span:after {
   width: 25px;
   transition: 0.3s;
 }
+header .menu.active {
+  position: fixed;
+  z-index: 1;
+}
 header .menu.active span {
   background-color: transparent;
 }
-header .menu.active span:before {
+header .menu.active:before {
   transform: rotate(45deg);
   top: 0;
 }
-header .menu.active span:after {
+header .menu.active:after {
   transform: rotate(-45deg);
   top: 0;
 }
