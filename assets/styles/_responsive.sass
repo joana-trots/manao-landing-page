@@ -46,7 +46,7 @@
             color: $black
         .navigation
             background-color: $white
-            position: absolute
+            position: fixed
             top: 0
             left: 0
             width: 100%
@@ -54,9 +54,11 @@
             transform: translateX(-100%)
             transition: 0.5s
             padding: 40px
+            z-index: 2
             &.active
                 transform: translateX(0)
                 transition: 0.5s
+                box-shadow: 0 10px 50px #0b0b354f
             .logo svg path
                 fill: #3F0F72
             .contacts
