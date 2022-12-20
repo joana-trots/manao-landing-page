@@ -128,7 +128,7 @@ header .menu {
   width: 40px;
   cursor: pointer;
   transition: 0.3s;
-  z-index: 2;
+  z-index: 3;
 }
 header .menu span {
   position: absolute;
@@ -140,7 +140,7 @@ header .menu span {
   transform: translate(-50%, -50%);
   transition: 0.3s;
 }
-header .menu span:before {
+header .menu span::before {
   content: "";
   position: absolute;
   top: -8px;
@@ -149,7 +149,7 @@ header .menu span:before {
   width: 25px;
   transition: 0.3s;
 }
-header .menu span:after {
+header .menu span::after {
   content: "";
   position: absolute;
   top: 8px;
@@ -158,18 +158,14 @@ header .menu span:after {
   width: 25px;
   transition: 0.3s;
 }
-header .menu.active {
-  position: fixed;
-  z-index: 1;
-}
 header .menu.active span {
   background-color: transparent;
 }
-header .menu.active:before {
+header .menu.active span::before {
   transform: rotate(45deg);
   top: 0;
 }
-header .menu.active:after {
+header .menu.active span::after {
   transform: rotate(-45deg);
   top: 0;
 }
@@ -514,7 +510,7 @@ header .contacts {
   }
   header .navigation {
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -522,10 +518,12 @@ header .contacts {
     transform: translateX(-100%);
     transition: 0.5s;
     padding: 40px;
+    z-index: 2;
   }
   header .navigation.active {
     transform: translateX(0);
     transition: 0.5s;
+    box-shadow: 0 10px 50px rgba(11, 11, 53, 0.3098039216);
   }
   header .navigation .logo svg path {
     fill: #3F0F72;
